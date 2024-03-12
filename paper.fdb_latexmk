@@ -1,9 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1710190899.67893 "c:/Users/mrdan/Projects/midterm_paper/paper.tex" "paper.pdf" "paper" 1710190900.70512 0
+["pdflatex"] 1710284650.6272 "c:/Users/mrdan/Projects/midterm_paper/paper.tex" "paper.pdf" "paper" 1710284651.34534 0
   "C:/Users/mrdan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1710188516 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
-  "C:/Users/mrdan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1710188778 11548 abc685a2d1cab845a3fbbddca6e3a191 ""
   "C:/Users/mrdan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710188772 24233144 138c5093728bcea633b5e604c54c27fa ""
-  "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi12.tfm" 1136765053 1524 4414a8315f39513458b80dfc63bff03a ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi6.tfm" 1136765053 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -21,12 +19,14 @@
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
+  "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/base/article.cls" 1705273579 20144 147463a6a579f4597269ef9565205cfe ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1705273578 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1708427688 30006 3d512c0edd558928ddea1690180ef77e ""
-  "c:/Users/mrdan/Projects/midterm_paper/paper.tex" 1710190900 1801 dae186ec03835ba43e045875c8d7e50c ""
-  "paper.aux" 1710190900 545 ba218bf320722e1d49ac0cc73cfaa288 "pdflatex"
-  "paper.tex" 1710190900 1801 dae186ec03835ba43e045875c8d7e50c ""
+  "c:/Users/mrdan/Projects/midterm_paper/paper.tex" 1710284649 4169 58b2efd07a326989fb5ad41c28d5d4ad ""
+  "paper.aux" 1710284651 356 b9b4aa86a1142de748e2d85d55575c57 "pdflatex"
+  "paper.tex" 1710284649 4169 58b2efd07a326989fb5ad41c28d5d4ad ""
   (generated)
   "paper.aux"
   "paper.log"

@@ -21,28 +21,54 @@ Burton's paper which modeled the growth of tumors using diffusion, applying many
 by Hill some years before (Burton, 1966). This paper will present a brief overview of the mathematics used in these
 papers and will recreate some of the graphics produced as well.
 
-\section{Sample Math Equation}
-Let's try displaying a math equation using LaTeX:
-\[
-    e^{i \pi} + 1 = 0
-\]
-This is Euler's famous equation, relating the mathematical constants $e$, $i$, $\pi$, and $0$.
+\section{Hill's Paper}
 
-\section{Lists}
-LaTeX also makes it easy to create lists:
+Hill's paper, titled `Diffusion of Oxygen and Lactic Acid through Tissues', set the scene for most of the diffusion models
+developed in the late 20th century to present. In the introduction of this paper, Hill states that the 
+`diffusion of dissolved substances through cells and tissues is a determining factor in many vital processes'. 
+The diffusion constant, $k$, is introduced, along with its usages. It is representative of the number of unit quantities
+of a substance that diffuse throughout an area of 1 $cm^2$ in a minute. The diffusion constant is usually a small value
+when related to systems that are outside of the body; for example, the diffusion constant would be very small when studying
+the diffusion of a gas within a large room. However, when studying systems within the body, the diffusion constant can be quite large.
+Hill gives the following example when explaining this:
 
-\subsection{Ordered List}
-\begin{enumerate}
-    \item First item
-    \item Second item
-    \item Third item
-\end{enumerate}
+\begin{tabular}{|c|c|c|}
+    \hline
+    Object & Diameter & Time to 90\% Saturation \\
+    \hline
+    Cylinder & 1 cm & 185 minutes \\
+    Actual Nerve & 0.7 mm & 54 seconds \\
+    Single Nerve Fiber & 7 $\mu$ (0.0007 cm) & 0.0054 seconds \\
+    \hline
+\end{tabular}
+\vspace*{1cm}
 
-\subsection{Unordered List}
-\begin{itemize}
-    \item Apples
-    \item Oranges
-    \item Bananas
-\end{itemize}
+As seen by this example, many processes of diffusion throughout the body are extremely rapid. However, at the time of Hill's
+paper, another problem was evident: not many problems in diffusion could be completely solved using mathematical methods.
+Even when evaluating these equations, the existence of a unique solution was only guaranteed with certain inital conditions.
+The steady state also needed to have specific parameters in order for the result to be of any interest.
+\subsection{Diffusion Within a Steady State}
+
+The first problem that Hill dealt with was the case where oxygen was being diffused from a gaseous or liquid phase.
+It was assumed that the oxygen was being used up by metabolic processes at some rate $a$ and that the concentration
+of oxygen, $y_0$, is maintained constant at $x = 0$. 
+
+\vspace*{0.5cm}
+
+Let $x$ be the distance from the constant source of oxygen to any point within the tissue. Given the assumptions above,
+the rate of diffusion across any unit area will be $ J = -k \* \frac{dy}{dx}$,\, where $J$ is the rate of diffusion, $k$ is the diffusion rate and the (-) 
+represents that the diffusion is occuring in the opposite direction from the source. This is more commonly known as Fick's
+first law of diffusion. To find the measure of this rate of accumulation, Fick's second law can be applied:
+\begin{equation}
+\frac{dJ}{dx} = k \* \frac{d^2y}{dx^2}
+\end{equation}
+
+Hill then combined these equations along with $a$, the rate of usage by the metabolic process, to come up with the first diffusion equation for
+this model: 
+
+\begin{equation}
+\frac{dy}{dt} + a = k \* \frac{d^2y}{dx^2}
+\end{equation}
 
 \end{document}
+
