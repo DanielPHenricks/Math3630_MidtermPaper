@@ -70,5 +70,84 @@ this model:
 \frac{dy}{dt} + a = k \* \frac{d^2y}{dx^2}
 \end{equation}
 
+This equation states that the rate of change of the concentration of oxygen plus the rate of usage of the oxygen is equal to the diffusion equation.
+Note that from the assumptions above, the concentration is held constant, so the equation can be further simplified to:
+
+\begin{equation}
+a = k \* \frac{d^2y}{dx^2}
+\end{equation}
+    
+The solution of the equation is 
+
+\begin{equation}
+y = \frac{ax^2}{2k} + bx + y_0
+\end{equation}
+
+where $b$ is a constant.
+This can be verified by taking the derivative of this equation twice: 
+
+$ \frac{dy}{dx} = \frac{a}{k}x + b$,
+
+\vspace*{0.25cm}
+
+$ \frac{d^2y}{dx^2} = \frac{a}{k}$
+\vspace*{0.25cm}
+
+To find the value of b that satisfies these equations, we assume that there must be some point 
+very far away from the source where the concentration is zero and the diffusion of oxygen is not occuring,
+so $\frac{dy}{dx}$ is also equal to zero. 
+
+
+We define $x'$ as the minimum distance where the concentration is equal to zero and then set these two equations equal to zero and solve:
+
+\vspace*{0.25cm}
+$ 0 = \frac{a{x'}^2}{2k} + bx' + y_0 $
+\vspace*{0.25cm}
+
+$ 0 = \frac{ax'}{k} + b \Leftrightarrow b = -\frac{ax'}{k}$
+\vspace*{0.5cm}
+
+Substituting back into the first equation:
+\vspace*{0.5cm}
+
+$ 0 = \frac{a{x'}^2}{2k} - \frac{a{x'}^2}{k} + y_0 \Leftrightarrow y_0 = \frac{a{x'}^2}{2k}$
+
+So 
+\begin{equation}
+    x' = \sqrt{\frac{2ky_0}{a}}
+\end{equation}
+(the maximum permeation distance of the oxygen from the source)
+
+and 
+
+\begin{equation}
+    b = \sqrt{\frac{-2ay_0}{k}}
+\end{equation} 
+
+We can now solve to find how much oxygen has been absorbed by the tissue: $ \int_{0}^{x'} y dx $, where y is found in
+equation (3).
+
+We get the integral:
+
+\begin{equation}
+    Y = \int_{0}^{\sqrt{\frac{2ky_0}{a}}} \frac{ax^2}{2k} + bx + y_0 dx
+\end{equation}
+
+To solve (7), we integrate and then simplify:
+
+\vspace*{0.25cm}
+
+$Y = \frac{ax^3}{6k} - \frac{x^2}{2}\sqrt{\frac{2ay_0}{k}} + y_0x \Bigg|_0^{\sqrt{\frac{2ky_0}{a}}}$
+\vspace*{0.25cm}
+
+$ = \sqrt{2ky_0} \frac{y_0}{3\sqrt{a}} - \frac{ky_0\sqrt{\frac{2ay_0}{k}}}{a} + y_0\sqrt{\frac{2ky_0}{a}}$
+\vspace*{0.25cm}
+
+\begin{equation}
+    = y_0 \frac{x'}{3}
+\end{equation}
+
+This result (which Hill also derived) shows that the maximum absorption of oxygen in a tissue that is $x'$ thick
+is one-third the full amount of oxygen that is diffused. 
 \end{document}
 
