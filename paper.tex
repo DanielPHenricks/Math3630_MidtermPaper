@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{graphicx}
 
 \title{ODE and Diffusion Models of Tumor Growth}
 \author{Daniel Henricks}
@@ -47,7 +48,7 @@ As seen by this example, many processes of diffusion throughout the body are ext
 paper, another problem was evident: not many problems in diffusion could be completely solved using mathematical methods.
 Even when evaluating these equations, the existence of a unique solution was only guaranteed with certain inital conditions.
 The steady state also needed to have specific parameters in order for the result to be of any interest.
-\subsection{Diffusion Within a Steady State}
+\subsection{Diffusion of Oxygen Within a Steady State}
 
 The first problem that Hill dealt with was the case where oxygen was being diffused from a gaseous or liquid phase.
 It was assumed that the oxygen was being used up by metabolic processes at some rate $a$ and that the concentration
@@ -74,7 +75,8 @@ This equation states that the rate of change of the concentration of oxygen plus
 Note that from the assumptions above, the concentration is held constant, so the equation can be further simplified to:
 
 \begin{equation}
-a = k \* \frac{d^2y}{dx^2}
+    a = k \frac{d^2y}{dx^2}
+    \label{eq:oxygen}
 \end{equation}
     
 The solution of the equation is 
@@ -149,5 +151,61 @@ $ = \sqrt{2ky_0} \frac{y_0}{3\sqrt{a}} - \frac{ky_0\sqrt{\frac{2ay_0}{k}}}{a} + 
 
 This result (which Hill also derived) shows that the maximum absorption of oxygen in a tissue that is $x'$ thick
 is one-third the full amount of oxygen that is diffused. 
+
+\subsection{Diffusion of Lactic Acid Within a Steady State}
+
+
+This case is the exact opposite of the case studied above. As the tissue uses up the oxygen, lactic acid is built up
+at a rate of $-\alpha$, the opposite sign as seen in equation (3) above. So our equation then becomes 
+
+\begin{equation}
+    -\alpha = k' \frac{d^2y'}{dx^2}
+    \label{eq:lactic_acid}
+\end{equation}
+
+where $k'$ is the new diffusion constant of lactic acid and $y'$ is the concentration of lactic acid at any point $x$.
+Using the same processes as above, we can find a solution to this equation:
+
+\begin{equation}
+    y' = \frac{-\alpha x^2}{2k'} - \beta x + y_0'    
+\end{equation}
+
+and can find that the total amount of lactic acid dissolved is
+
+\begin{equation}
+    Y = \frac{y_0' \beta}{3}
+\end{equation}
+
+These equations all assume that there exists some point in the tissue where the concentration of lactic acid or oxygen
+is equal to zero. If this is not the case, Hill showed in his paper that the amount of oxygen dissolved would be
+
+\begin{equation}
+    y_0b - \frac{ab^3}{3k}
+\end{equation}
+
+and the total amount of lactic acid dissolved would be 
+
+\begin{equation}
+    y_0'b + \frac{\alpha b^3}{3k'}
+\end{equation}
+
+\subsection{Combining Oxygen and Lactic Acid Diffusion}
+
+Hill then combined both equations to come to a conclusion on how lactic acid and oxygen would interact in a muscle.
+The conclusions made from this section of the paper were essential for future models of diffusion. First, it was
+assumed that the thickness $b > x'$ so none of the oxygen was able to penetrate through the entire system. From above, 
+the concentrations of oxygen and lactic acid are $y$ and $y'$ respectively. Then the following graphic describes the system:
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{graphics/image.png}
+    \caption{From 0 to 5 and 20 to 25, the concentration $y$ is equal to the steady state $y_0$. From 5 to 10,
+    the concentration $y$ is decreasing until it reaches 0 at 10 (in green). From 10 to 15, the lactic acid concentration
+    $y'$ (in blue) is increasing to its maximum and then decreases to 0 at 15. From 15 to 20, the oxygen concentration $y_0$ increases
+    until reaching the steady state (red) at x = 20.}
+    \label{fig:image}
+\end{figure}
+
 \end{document}
 
