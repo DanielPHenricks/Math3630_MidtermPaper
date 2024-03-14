@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{tikz}
 \title{ODE and Diffusion Models of Tumor Growth}
 \author{Daniel Henricks}
 
@@ -253,6 +254,29 @@ of the nodule as a function of time." The conclusions were also described "with 
 general audience, unlike the previous papers of the time.
 
 
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[scale=2]
+        % Draw the outer circle
+        \draw (0, 0) circle (1);
+
+        % Draw the inner circles
+        \draw (0, 0) circle (0.8);
+        \draw (0, 0) circle (0.6);
+
+        % Add annotations
+        \node[anchor=east] at (1.4, 0) {Layer 1};
+        \node[anchor=west] at (-1.4, 0) {Layer 2};
+        \node[anchor=south] at (0, 1.2) {Layer 3};
+
+        % Add labels
+        \node[anchor=north east] at (1, 1) {Cross-section};
+
+        \draw[->, thick] (0, 0) -- (0.6, 0) node[midway, above] {Arrow Label};
+    \end{tikzpicture}
+    \caption{Cross-section of a sphere with three layers.}
+    \label{fig:cross-section}
+\end{figure}
 
 \end{document}
 
