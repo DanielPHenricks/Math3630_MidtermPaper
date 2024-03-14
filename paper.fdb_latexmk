@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1710356518.16089 "c:/Users/mrdan/Projects/midterm_paper/paper.tex" "paper.pdf" "paper" 1710356519.20518 0
+["pdflatex"] 1710440741.39325 "c:/Users/mrdan/Projects/midterm_paper/paper.tex" "paper.pdf" "paper" 1710440742.6714 0
   "C:/Users/mrdan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1710356283 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/mrdan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710188772 24233144 138c5093728bcea633b5e604c54c27fa ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -38,10 +38,10 @@
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty" 1665067579 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1665067579 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1708427688 30006 3d512c0edd558928ddea1690180ef77e ""
-  "c:/Users/mrdan/Projects/midterm_paper/paper.tex" 1710356516 8986 9aaab402d442a154e4791518b7f377af ""
+  "c:/Users/mrdan/Projects/midterm_paper/paper.tex" 1710440740 9466 a2618f781a765a272f30acabdb64b23d ""
   "graphics/image.png" 1710355413 17433 dc48edce79770d11b6ae16a4e4b35039 ""
-  "paper.aux" 1710356519 1248 2368c30b75fd2597b77828499af0b0a7 "pdflatex"
-  "paper.tex" 1710356516 8986 9aaab402d442a154e4791518b7f377af ""
+  "paper.aux" 1710440742 1248 2368c30b75fd2597b77828499af0b0a7 "pdflatex"
+  "paper.tex" 1710440740 9466 a2618f781a765a272f30acabdb64b23d ""
   (generated)
   "paper.aux"
   "paper.log"
