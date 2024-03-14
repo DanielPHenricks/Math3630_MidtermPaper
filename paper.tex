@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{tikz}
 \title{ODE and Diffusion Models of Tumor Growth}
 \author{Daniel Henricks}
 
@@ -12,7 +13,7 @@
 \section{Introduction}
 
 Researchers have been studying cancer and the patterns behind tumor growth for thousands of years. Hippocrates
-was accredited with possibly being the first to describe a tumor, and tumors were mainly described by their color
+was accredited with possibly being the first to describe a tumor, which were mainly described by their color
 and their response to touch. However, ancient physicians did not separate benign and malignant tumors, but they
 acknowledged the tumor's ability to infect nearby tissue. The application of mathematical models to tumor growth
 did not start to gain traction until much later, however. In the early 20th century, one of the most famous uses of
@@ -241,17 +242,67 @@ This equation states that in this steady state, it takes $\frac{a}{\alpha} cm^3$
 the paper by discussing other possible steady states that could be used to investigate this model. However, they are not of interest for
 this paper.
 
-\section{Greenspan's paper: Models for the Growth of a Solid Tumor by Diffusion}
+\section{Greenspan's Paper: Models for the Growth of a Solid Tumor by Diffusion}
 
 Greenspan's paper was released almost 50 years after the inital paper by Hill was authored. Since then, many mathematical models
 had been employed to try to model processes within the body. A few years prior to the release of Greenspan's paper, Burton (1966)
 authored one of the most famous papers on the growth of tumors as a problem of diffusion. Greenspan expanded on many of the models
 developed by Burton.
 
-The primary goal of Greenspan was to "infer the chemical source of growth inhibition from the most easily obtained data...the outer radius
-of the nodule as a function of time." The conclusions were also described "with as little mathematics as possible" to try to attract a more
+The primary goal of Greenspan was to `infer the chemical source of growth inhibition from the most easily obtained data...the outer radius
+of the nodule as a function of time.' The conclusions were also described `with as little mathematics as possible' to try to attract a more
 general audience, unlike the previous papers of the time.
 
+\subsection{Overview of the Biology}
+
+A tumor is any abnormal group of cells, which can either be benign or malignant. Benign tumors are defined by being confined to their
+original location and do not infect surrounding tissue or body sites. Malignant tumors, however, are capable of invading nearby tissue
+and can spread throughout the body via metastasis. For a tumor to be classified as cancer, it must be a malignant tumor; cancers are so
+dangerous because of their ability to spread to various sites in the body, making localized treatments very hard to administer.
+
+Tumor growth is usually backed by the tumor receiving nutrients and wastes from nearby cells via a diffusion process similar to one discussed
+in section 2 of the paper. When the tumor is small, most cells nearby still are receiving most of the necessary nourishment from the source of the
+diffusion. In terms discussed before, the cells are absorbing $\gamma \* a$ times the normal rate of absorption, where $\gamma \in [0, 1]$ represents
+the proportion of nutrients that go to the healthy cell. As the size of the tumor increases, $\gamma \rightarrow 0$; however, the growth rate of the tumor
+begins to decrease as it becomes harder for it to absorb resources from the healthy cells. A necrotic core - the collection of dead and dying cells that allow
+for metastasis - is formed at the center of the tumor. The steady state configuration for this tumor is typically modeled
+to be a sphere with multiple layers. This leads into the variation of this model that is utilized by Greenspan.
+
+\subsection{The Model}
+
+The typical model used to represent a tumor is as follows:
+\begin{enumerate}
+    \item[(a)] The outermost layer: A layer several cells thick where cell activity proceeds as normal with exponential growth.
+    \item[(b)] The middle layer: Cells are alive but do not perform mitosis.
+    \item[(c)] The inner layer: This is the necrotic core. The cells here are dead or dying.
+\end{enumerate}
+
+A better illustration of this is shown in Figure \ref{fig:cross-section}:
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[scale=2]
+        \draw (0, 0) circle (1.5);
+        \draw (0, 0) circle (1);
+        \draw (0, 0) circle (0.45);
+
+        \draw[->, thick] (0, 0) -- (0.45, 0) node[midway, above] {$r_1$};
+        \draw[->, thick] (0, 0) -- (0, 1) node[midway, right] {$r_2$};
+        \draw[->, thick] (0, 0) -- (-1.07, -1.07) node[midway, above] {$r_3$};
+    \end{tikzpicture}
+    \caption{A cross-section of the sphere that represents the tumor. The necrotic core is situated between $0 < r < r_1$,
+        the middle layer is situated between $r_1 < r < r_2$, and the healthy outer layer is located between $r_2 < r < r_3$.}
+    \label{fig:cross-section}
+\end{figure}
+
+Typically, the few tumor cells can expand quite rapidly depending on several parameters, such as the cell types and nutrient levels of the body.
+They can multiply in number to around a million in a growth period of days. The nodule (Figure \ref{fig:cross-section}) can expand from being microscopic
+to having a radius of over 1 millimeter. Greenspan wished to apply this model to understand how $r_3$ - the outer radius of the nodule - changes
+with respect to time by analyzing the steady state. To do this, several assumptions were adopted by the model:
+
+\begin{enumerate}
+    \item[(i)] The tumor is a sphere with perfect symmetry at all times, leaving the experiment to have 2 independent variables: time, $t$, and $r$, the radial distance.
+    \item[(ii)] Cancer cells die when the nutrient levels, $\sigma(r, t)$ drop below a critical minimum of $\sigma_{min}.$
+\end{enumerate}
 
 
 \end{document}
