@@ -285,9 +285,9 @@ A better illustration of this is shown in Figure \ref{fig:cross-section}:
         \draw (0, 0) circle (1);
         \draw (0, 0) circle (0.45);
 
-        \draw[->, thick] (0, 0) -- (0.45, 0) node[midway, above] {$r_1$};
-        \draw[->, thick] (0, 0) -- (0, 1) node[midway, right] {$r_2$};
-        \draw[->, thick] (0, 0) -- (-1.07, -1.07) node[midway, above] {$r_3$};
+        \draw[->, thick] (0, 0) -- (0.45, 0) node[midway, above] {$r_1(t)$};
+        \draw[->, thick] (0, 0) -- (0, 1) node[midway, left] {$r_2(t)$};
+        \draw[->, thick] (0, 0) -- (-1.07, -1.07) node[midway, right] {$r_3(t)$};
     \end{tikzpicture}
     \caption{A cross-section of the sphere that represents the tumor. The necrotic core is situated between $0 < r < r_1$,
         the middle layer is situated between $r_1 < r < r_2$, and the healthy outer layer is located between $r_2 < r < r_3$.}
@@ -296,13 +296,88 @@ A better illustration of this is shown in Figure \ref{fig:cross-section}:
 
 Typically, the few tumor cells can expand quite rapidly depending on several parameters, such as the cell types and nutrient levels of the body.
 They can multiply in number to around a million in a growth period of days. The nodule (Figure \ref{fig:cross-section}) can expand from being microscopic
-to having a radius of over 1 millimeter. Greenspan wished to apply this model to understand how $r_3$ - the outer radius of the nodule - changes
+to having a radius of over 1 millimeter. Greenspan wished to apply this model to understand how $r_3(t)$ - the outer radius of the nodule - changes
 with respect to time by analyzing the steady state. To do this, several assumptions were adopted by the model:
 
 \begin{enumerate}
     \item[(i)] The tumor is a sphere with perfect symmetry at all times, leaving the experiment to have 2 independent variables: time, $t$, and $r$, the radial distance.
-    \item[(ii)] Cancer cells die when the nutrient levels, $\sigma(r, t)$ drop below a critical minimum of $\sigma_{min}.$
+    \item[(ii)] Cancer cells die when the nutrient levels, $\sigma(r, t)$ drop below a critical minimum of $\sigma_{min}.$ Oxygen is the most essential nutirient and is modeled using the methods described in the paper by Hill (1928).
+    \item[(iii)] Oxygen is used by living cells only and depends on the nutrient concentration.
 \end{enumerate}
+
+The model also assumes that living cancer cells maintain a compact solid mass and that any mass lost from the diffusion of permeable substances coming from
+disintegrated necrotic cells is replaced by cells pushing towards the center of the compact mass. Because of this, we arrive at the conclusion in equilibrium that,
+if the rate of cell production exceeds the losses from necrotic disintegration, then the tumor must be growing in size. The reverse of this statement also holds.
+
+Recall from above that the middle layer of the tumor has some substance that inhibits the mitosis of cancer cells. We define $\beta(r, t)$ to be the concentration
+of this substance in cubic centimeters.
+
+\subsection{Compartments and Conservation of Mass}
+
+We need a few additional approximations before establishing the model:
+
+\begin{enumerate}
+    \item[(i)] All living tumor cells are the same and do not fluctuate in size.
+    \item[(ii)] Mitosis occurs instantaniously and all new cells are the same size as existing cells.
+    \item[(iii)] The growth rate via mitosis is a distribution $S(\sigma, \beta)$ with $S(\sigma, \beta) = 0$ for $\beta > \beta_{max}$ or $\sigma < \sigma_{min}$.
+    \item[(iv)] The core loses cell volume proportional to its volume with the proportionality constant defined as $3\lambda$.
+\end{enumerate}
+
+Now we can discuss the conservation of mass law:
+
+\begin{equation}
+    c_{total}(t) = c_0 + c_{prod}(t) - n(t) - n_{lost}(t)
+\end{equation}
+where
+
+$c_{total}(t)$ is the total number of cells produced at time $t$,
+
+$c_0$ is the inital population,
+
+$c_{prod}(t)$ is the total amount of cells produced during the interval $[0, t)$,
+
+$n(t)$ is the total volume of necrotic cells at $t$,
+
+and $n_{lost}(t)$ is the volume lost to the necrotic core during the interval $[0, t)$.
+
+Let $r_3(0)$ be the inital outer radius of the tumor. Recall that cell death occurs when the nutrient level $\sigma$ falls below
+its minimum value $\sigma_{min}$, the edge of the inner radius, $r_1(t)$, must satisfy
+
+\begin{equation}
+    \sigma(r_1(t), t) = \sigma_{min}, t \geq 0
+\end{equation}
+
+Let $r_2(t)$ be the radius where the chemical inhibitor reaches the critical level. Then by definition
+
+\begin{equation}
+    \beta(r_2(t), t) = \beta_{max}
+\end{equation}
+
+We can now replace the formulas described above with mathematical expressions:
+
+\begin{equation}
+    c_{total}(t) = \frac{4\pi}{3}(r_3^3(t) - r_1^3(t))
+\end{equation}
+
+by subtracting the areas of the two spheres.
+
+It is quite obvious to see that
+
+\begin{equation}
+    c_{init}(t) = \frac{4\pi}{3}r_3^3(0)
+\end{equation}
+
+and that
+
+\begin{equation}
+    n(t) = \frac{4\pi}{3}r_1^3(t)
+\end{equation}
+
+Using our assumption that the necrotic core loses volume at a constant rate, we can proudce the integral
+
+\begin{equation}
+    n_{lost}(t) = \frac{4\pi}{3} \int_{0}^{t}3\lambda r_1^3(t) dt
+\end{equation}
 
 
 \end{document}
