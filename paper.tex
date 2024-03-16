@@ -494,7 +494,66 @@ Evaluating the integral:
     r_3^2\frac{dr_3}{dt} = \frac{s}{3} (r_3^3(t) - max(r_1^3(t), r_2^3(t))) - \lambda r_1^3(t)
 \end{equation}
 
-This is our diffusion equation.
+Now we will derive the diffusion equations for $\beta$ and $\sigma$. Since we are assuming to be in diffusive equilibrium, we can greatly simplify the expressions.
+
+Recall Fick's second law:
+
+\begin{equation}
+    \frac{\partial J}{\partial t} = k \nabla^2J + S(r, t)
+\end{equation}
+
+where the $S(r, t)$ term represents the source rate.
+We can then formulate our diffusion equations by simplifying this equation. Since we are in the steady state, we know that the rate of change
+of concentration is equal to zero (or otherwise we would still have diffusion occuring). So we plug in for the $\nabla^2J$
+Laplacian term:
+
+\begin{equation}
+    \nabla^2J = \frac{-S(r, t)}{k}
+\end{equation}
+
+By assuming spherical symmetry, we can simplify this Laplacian into spherical coordinates:
+
+\begin{equation}
+    \nabla^2J = \frac{1}{r^2} \frac{\partial}{\partial r} r^2 \frac{\partial}{\partial r} J
+\end{equation}
+
+First, solve for the diffusion equation for $\beta$. As long as we are in the core, by assumption (i), $-S(r, t)$ will be equal to $P$.
+
+\begin{equation}
+    \frac{1}{r^2} \frac{\partial}{\partial r} r^2 \frac{\partial}{\partial r} \beta(r, t) = \frac{-P}{k'}
+\end{equation}
+
+Then use the step function to make sure that the necrotic core assumption is held:
+
+\begin{equation}
+    \frac{1}{r^2} \frac{\partial}{\partial r} r^2 \frac{\partial}{\partial r} \beta(r, t) = \frac{-P}{k'} H(r_1(t) - r)
+\end{equation}
+
+This makes the right-hand side of the equation equal to zero when $r_1(t) < r$. This equation now takes the form of (4.3) from Greenspan (1972).
+
+\vspace*{0.25cm}
+
+Doing the same process for $\sigma$: First, use assumption (iii) to replace the rate $S(r, t)$ with $a$:
+
+\begin{equation}
+    \frac{1}{r^2} \frac{\partial}{\partial r} r^2 \frac{\partial}{\partial r} \sigma(r, t) = \frac{a}{k}
+\end{equation}
+
+Then add the appropriate step function conditions:
+
+\begin{equation}
+    \frac{1}{r^2} \frac{\partial}{\partial r} r^2 \frac{\partial}{\partial r} \sigma(r, t) = \frac{a}{k} H(r - r_1(t)) H(r_3(t) - r)
+\end{equation}
+
+This is equivalent to equation (4.4).
+
+\subsection{Solving the Diffusion Equations}
+
+To solve these partial differential equations, boundary equations need to be established. The boundary conditions have been briefly mentioned at the beginning of this
+section. First, $\sigma$ and its partial derivatives need to be continuous, along with $\beta$ and its partial derivatives. It is also necessary for equations
+(17) and (18) to be satisfied to guarantee a unique solution. Only one initial condition is necessary to solve the diffusion equation: the inital size of the outer
+tumor, $r_3(0)$. It is assumed that at $t = 0$, the tumor is small enough such that $r_1(t) = r_2(t) = 0$.
+
 
 \end{document}
 
