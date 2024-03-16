@@ -2,7 +2,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{tikz}
-\title{ODE and Diffusion Models of Tumor Growth}
+\title{Diffusion Models for Tissues and Tumor Growth}
 \author{Daniel Henricks}
 
 
@@ -20,10 +20,10 @@ did not start to gain traction until much later, however. In the early 20th cent
 the diffusion model was first developed: Hill released a paper discussing how the movement of lactic acid
 and oyxgen throughout the body could be shaped into a diffusion problem (Hill, 1928). This paper eventually led to
 Greenspan's paper which modeled the growth of tumors using diffusion, applying many of the mathematical tools employed
-by Hill some years before (Greenspan, 1972). This paper will present a brief overview of the mathematics used in these
-papers and will recreate some of the graphics produced as well.
+by Hill some years before (Greenspan, 1972). This paper will present an overview of the diffusion model in mathematical
+biology and will discuss the mathematics and biology behind two of the most influential diffusion papers.
 
-\section{Hill's Paper}
+\section{Hill's Paper on Diffusion}
 
 Hill's paper, titled `Diffusion of Oxygen and Lactic Acid through Tissues', set the scene for most of the diffusion models
 developed in the late 20th century to present. In the introduction of this paper, Hill states that the
@@ -554,6 +554,174 @@ section. First, $\sigma$ and its partial derivatives need to be continuous, alon
 (17) and (18) to be satisfied to guarantee a unique solution. Only one initial condition is necessary to solve the diffusion equation: the inital size of the outer
 tumor, $r_3(0)$. It is assumed that at $t = 0$, the tumor is small enough such that $r_1(t) = r_2(t) = 0$.
 
+The equations (4.6) - (4.9) will be verified by checking the solutions. The equations given in Greenspan (1972) are as follows:
 
+If $r_1(t) < r < r_3(t)$:
+\begin{equation}
+    \sigma = \sigma_{\infty} - \frac{a}{6k}(r_3^2 - r^2) + \frac{ar_1^3}{3k} (\frac{1}{r} - \frac{1}{r_3})
+\end{equation}
+
+and
+
+\begin{equation}
+    \beta = \frac{Pr_1^3}{3k'}(\frac{1}{r} - \frac{1}{r_3})
+\end{equation}
+
+From the boundaries of the step functions found above, in this region, evaluating the left-hand side of $\beta$ should
+yield zero, since $r > r_1(t)$.
+
+First checking $\beta$:
+$$
+    \frac{1}{r^2} \frac{\partial}{\partial r} r^2 \frac{\partial}{\partial r} (\frac{Pr_1^3}{3k'}(\frac{1}{r} - \frac{1}{r_3}))
+$$
+
+$$
+    = \frac{1}{r^2} \frac{\partial}{\partial r} r^2 (-\frac{Pr_1^3}{3kr^2})
+$$
+
+$$
+    = \frac{1}{r^2} (\* 0) = 0
+$$
+
+Next, checking $\sigma$:
+
+$$
+    \frac{1}{r^2} \frac{\partial}{\partial r} r^2 \frac{\partial}{\partial r} [\sigma_{\infty} - \frac{a}{6k}(r_3^2 - r^2) + \frac{ar_1^3}{3k} (\frac{1}{r} - \frac{1}{r_3})]
+$$
+
+
+$\sigma_{\infty}$ does not depend on the value of $r$, so it is a constant. We get
+
+$$
+    \frac{1}{r^2} \frac{\partial}{\partial r} r^2 (\frac{ar}{3k} - \frac{ar_1^3}{3kr^2})
+$$
+
+$$
+    = \frac{1}{r^2} (\frac{ar^2}{k})
+$$
+
+$$
+    = \frac{a}{k}
+$$
+
+So we have successfully shown that the first two equations hold according to the parameters provided via the assumptions.
+Now doing the same process for equations (4.8) and (4.9):
+
+If $ r \leq r_1(t)$:
+
+\begin{equation}
+    \sigma = \sigma_{min}
+\end{equation}
+
+and
+
+\begin{equation}
+    \beta = \frac{Pr_1^3}{3k'}(\frac{3}{2r_1} - \frac{r^2}{2r_1^3} - \frac{1}{r_3})
+\end{equation}
+
+The verification of $\sigma$ can be done directly. If $r < r_1(t)$, the only solution that exists must be $\sigma = \sigma_{min}$.
+This is because of being inside of the necrotic core and has been shown in equation (17).
+
+To verify $\beta$, the same method as before will be used. We start with the equation
+
+$$
+    \frac{1}{r^2} \frac{\partial}{\partial r} r^2 \frac{\partial}{\partial r} [\frac{Pr_1^3}{3k'}(\frac{3}{2r_1} - \frac{r^2}{2r_1^3} - \frac{1}{r_3})]
+$$
+
+$$
+    = \frac{1}{r^2} \frac{\partial}{\partial r} r^2 (-\frac{Pr}{3k'})
+$$
+
+$$
+    = \frac{1}{r^2} (-\frac{Pr^2}{k'})
+$$
+
+$$
+    = -\frac{P}{k'}
+$$
+
+All of the differential equations have now been verified. We can solve for $\sigma_{min}$ and $\beta_{max}$:
+
+First, solving for $\sigma_{min}$ requires using equation (17):
+
+$$
+    \sigma(r_1(t), t) = \sigma_{min}
+$$
+
+We now have solutions to the differential equations and directly plug in to them. Since $ r = r_1(t)$, the first equation is used.
+
+$$
+    \sigma(r_1(t), t) = \sigma_{\infty} - \frac{a}{6k}(r_3^2 - r_1^2) + \frac{ar_1^3}{3k} (\frac{1}{r_1} - \frac{1}{r_3})
+$$
+
+After simplification, this is
+\begin{equation}
+    \sigma_{\infty} - \sigma_{min} = \frac{a}{3k}[\frac{r_3^2-r_1^2}{2} - r_1^2 + \frac{r_1^3}{r_3}]
+\end{equation}
+
+For $\beta$, equation (16) is used:
+
+$$
+    \beta(r_2(t), t) = \beta_{max}
+$$
+
+Then the same process for finding the max value is used:
+
+\begin{equation}
+    \beta_{max} = \frac{P}{3k'}r_1^3(\frac{1}{r_2}-\frac{1}{r_3})
+\end{equation}
+which represents the condition for which the slowing of mitosis for cells in the middle layer occurs.
+
+\section{Conclusion}
+
+Hill (1928) and Greenspan (1972) both proposed diffusion models to solve their specific modeling situation.
+Many modern diffusion models now follow the patterns shown in these two papers and expand on them by adding additional
+terms to the diffusion PDE. For example, a recent paper by Stepien et al. (2015) included a diffusion model for in vitro
+glioblastoma growth which included the following diffusion equation:
+
+\begin{equation}
+    \frac{\partial u_i(r, t)}{\partial t} = \underset{\text{Diffusion}}{\underbrace{k \nabla^2 u_i}} + \underset{\text{Logistic growth}}{\underbrace{g u_i \left(1 - \frac{u_i}{u_{\max}}\right)}} - \underset{\text{Taxis}}{\underbrace{\nu_i \nabla_r \cdot u_i}} + \underset{\text{Shed cells from core}}{\underbrace{s \delta(r - R(t))}}
+\end{equation}
+
+Many additional papers also exists which discuss how to modify Fick's second law equation in order to better model biological processes. Possible improvments to the two models above could be adding a logistic growth term into the diffusion equation; however, both authors
+were limited by the lack of computing power and availability of past models. Both authors utilized similar methods for completely different
+biological topics, demonstrating the versatility of the diffusion model. Overall, the diffusion model is a relatively simple and flexible model to apply to
+various biological circumstances.
+
+\begin{thebibliography}{99}
+
+    
+    \bibitem{citation-key4}
+    Araujo, R. P., McElwain, D. L. S. (2004).
+    \newblock A Historu of the Study of Solid Tumor Growth: The Contribution of Mathematical Modeling,
+    \newblock \emph{Bulletin of Mathematical Biology},
+    \newblock Volume~66, pp 1039--1091.
+
+    \bibitem{citation-key2}
+    Burton, A. C. (1966).
+    \newblock Rate of Growth of Solid Tumors as a Problem of Diffusion,
+    \newblock \emph{Growth},
+    \newblock Volume~30, pp 157--176.
+
+    \bibitem{citation-key3}
+    Greenspan, H. P. (1972).
+    \newblock Models for the Growth of a Solid Tumor by Diffusion,
+    \newblock \emph{Stud. Appl. Math},
+    \newblock Volume~52, pp 317--340.
+
+    \bibitem{citation-key1}
+    Hill, A. V. (1928).
+    \newblock The Diffusion of Oxygen and Lactic Acid through Tissues,
+    \newblock \emph{R. Soc Proc. B},
+    \newblock Volume~104, No.~728, pp 39--96.
+
+    \bibitem{citation-key5}
+    Stepien, T. L., Rutter, E. M., Kuang, Y. (2015).
+    \newblock A Data-Motivated Density-Dependent Diffusion Model of In Vitro Glioblastoma Growth,
+    \newblock \emph{Stud. Appl. Math},
+    \newblock Volume~12, No.~6, pp 1157--1172.
+
+
+\end{thebibliography}
 \end{document}
 

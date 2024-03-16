@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1710568182.15974 "d:/apps/Math3630_MidtermPaper/paper.tex" "paper.pdf" "paper" 1710568182.84726 0
+["pdflatex"] 1710617054.03586 "d:/apps/Math3630_MidtermPaper/paper.tex" "paper.pdf" "paper" 1710617054.7575 0
   "C:/Users/mrdan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1710442152 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/mrdan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710441359 24225087 1c1602d0fd49945ab791c18c7dd7da30 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -16,6 +16,7 @@
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy10.tfm" 1136765053 1124 6c73e740cf17375f03eec0ee63599741 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
+  "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
@@ -29,6 +30,7 @@
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1247596666 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
+  "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1247596670 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1673775190 1016 1c2b89187d12a2768764b83b4945667c ""
@@ -112,10 +114,10 @@
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfkeys.sty" 1673775190 274 5ae372b7df79135d240456a1c6f2cf9a ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfrcs.sty" 1673775190 325 f9f16d12354225b7dd52a3321f085955 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "d:/apps/Math3630_MidtermPaper/paper.tex" 1710568180 26723 eb769772518293c1c6435e5803f4612f ""
+  "d:/apps/Math3630_MidtermPaper/paper.tex" 1710617053 32658 92a49d5f9d8817c46ffc7572bdf74ad3 ""
   "graphics/image.png" 1710440905 17433 dc48edce79770d11b6ae16a4e4b35039 ""
-  "paper.aux" 1710568182 3035 d113e15fcd05f0286534738fde4f54e2 "pdflatex"
-  "paper.tex" 1710568180 26723 eb769772518293c1c6435e5803f4612f ""
+  "paper.aux" 1710617054 3282 e1a348c626c5c8e728e5d74b3deb5d7e "pdflatex"
+  "paper.tex" 1710617053 32658 92a49d5f9d8817c46ffc7572bdf74ad3 ""
   (generated)
   "paper.aux"
   "paper.log"
