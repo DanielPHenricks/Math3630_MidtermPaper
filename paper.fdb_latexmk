@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1710709647.91086 "d:/apps/Math3630_MidtermPaper/paper.tex" "paper.pdf" "paper" 1710709648.61626 0
+["pdflatex"] 1710709838.681 "d:/apps/Math3630_MidtermPaper/paper.tex" "paper.pdf" "paper" 1710709839.72256 0
   "C:/Users/mrdan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1710442152 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/mrdan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710441359 24225087 1c1602d0fd49945ab791c18c7dd7da30 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -114,10 +114,10 @@
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfkeys.sty" 1673775190 274 5ae372b7df79135d240456a1c6f2cf9a ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfrcs.sty" 1673775190 325 f9f16d12354225b7dd52a3321f085955 ""
   "C:/Users/mrdan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "d:/apps/Math3630_MidtermPaper/paper.tex" 1710709646 32651 7cdb77338e8a8ffcf83b82a1eee09e27 ""
+  "d:/apps/Math3630_MidtermPaper/paper.tex" 1710709837 32653 95802cbe93d2845b92e27df8b80cd92b ""
   "graphics/image.png" 1710440905 17433 dc48edce79770d11b6ae16a4e4b35039 ""
-  "paper.aux" 1710709648 3282 e1a348c626c5c8e728e5d74b3deb5d7e "pdflatex"
-  "paper.tex" 1710709646 32651 7cdb77338e8a8ffcf83b82a1eee09e27 ""
+  "paper.aux" 1710709839 3282 e1a348c626c5c8e728e5d74b3deb5d7e "pdflatex"
+  "paper.tex" 1710709837 32653 95802cbe93d2845b92e27df8b80cd92b ""
   (generated)
   "paper.aux"
   "paper.log"
